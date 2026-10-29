@@ -1,0 +1,8 @@
+name = "medix-backend"
+main = "src/index.js"
+compatibility_date = "2024-03-20"
+
+[[d1_databases]]
+binding = "DB"
+database_name = "medix-db"
+database_id = "40e4e4ac-9c70-4c39-86e9-b292da5ff24b"
