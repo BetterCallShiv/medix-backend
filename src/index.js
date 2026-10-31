@@ -84,7 +84,7 @@ export default {
       try {
         const cleanQuery = query.trim();
         const { results } = await env.DB.prepare(
-          `SELECT brand_name FROM medicines WHERE brand_name LIKE ? ORDER BY brand_name ASC LIMIT 10`
+          `SELECT brand_name FROM medicines WHERE brand_name LIKE ? COLLATE NOCASE ORDER BY brand_name COLLATE NOCASE ASC LIMIT 10`
         )
           .bind(cleanQuery + "%")
           .all();
@@ -94,6 +94,7 @@ export default {
           status: 200,
           headers: {
             "Content-Type": "application/json",
+            "Cache-Control": "public, max-age=86400, s-maxage=86400", // Edge cache popular search results
             ...corsHeaders,
           },
         });

@@ -30,7 +30,8 @@ CREATE TABLE interactions (
 -- ==============================================================
 
 -- Index for instant brand name resolution & prefix search autocomplete (LIKE 'query%')
-CREATE INDEX idx_brand_name ON medicines(brand_name);
+-- MUST use COLLATE NOCASE so SQLite executes a B-Tree range SEARCH instead of a 318k-row full table SCAN
+CREATE INDEX idx_brand_name ON medicines(brand_name COLLATE NOCASE);
 
 -- Composite covering index for pairwise interaction lookups
 CREATE INDEX idx_interactions_drugs ON interactions(drug1, drug2);
