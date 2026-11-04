@@ -1,0 +1,28 @@
+# Dependencies
+node_modules/
+
+# Cloudflare Wrangler
+.wrangler/
+.dev.vars*
+
+# Environment & Secrets
+.env
+.env.*
+!.env.example
+
+# Large Database Dumps
+backup_medix_db.sql*
+*.sql.bak
+*.dump
+
+# Logs & temp files
+*.log
+.DS_Store
+Thumbs.db
+
+# Editor configs & caches
+.editorconfig
+.idea/
+.vscode/
+*.swp
+*.swo

@@ -1,0 +1,16 @@
+{
+  "name": "medix-backend",
+  "version": "1.0.0",
+  "description": "Serverless Drug-Drug Interaction Detection API at the Edge powered by Cloudflare Workers and Cloudflare D1",
+  "main": "src/index.js",
+  "author": "Shivam Raj <bettercallshiv@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "dev": "wrangler dev",
+    "deploy": "wrangler deploy",
+    "db:init:local": "wrangler d1 execute medix-db --local --file=./schema.sql"
+  },
+  "devDependencies": {
+    "wrangler": "^3.0.0"
+  }
+}
